@@ -1,11 +1,10 @@
-import 'package:app/dao/bibi.dart';
-import 'package:app/module/bibi.dart';
-import 'package:app/widget/bibiBox.dart';
-import 'package:app/widget/load_more.dart';
-import 'package:app/widget/loading.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/dao/bibi.dart';
+import 'package:webapp/module/bibi.dart';
+import 'package:webapp/widget/bibiBox.dart';
+import 'package:webapp/widget/load_more.dart';
+import 'package:webapp/widget/loading.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
 
 class BibiPage extends StatefulWidget {
   @override
@@ -53,8 +52,8 @@ class _BibiPageState extends State<BibiPage> {
 
   @override
   void dispose() {
-    _scrollController.dispose();
     super.dispose();
+    _scrollController.dispose();
   }
 
   Widget _renderListItem(int index) {
@@ -96,7 +95,7 @@ class ImageHeader extends StatelessWidget {
       height: 260.0,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/bibibg.jpg'),
+          image: AssetImage('images/bibibg.jpg'),
           fit: BoxFit.cover
         ),
       ),

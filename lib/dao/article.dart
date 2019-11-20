@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:app/constant.dart';
-import 'package:app/module/article.dart';
-import 'package:app/util/http.dart';
+import 'package:webapp/constant.dart';
+import 'package:webapp/module/article.dart';
+import 'package:webapp/util/http.dart';
 
 class ArticleDao {
   static Future<ArticleModule> fetchByAuthor(int page) async {

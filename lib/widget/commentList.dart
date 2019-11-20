@@ -1,10 +1,11 @@
-import 'package:app/module/comment.dart';
-import 'package:app/page/comment.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/empty.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/load_more.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/module/comment.dart';
+import 'package:webapp/page/comment.dart';
+import 'package:webapp/util/util.dart';
+// import 'package:webapp/page/comment.dart';
+import 'package:webapp/widget/empty.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/load_more.dart';
+import 'package:flutter_web/material.dart';
 
 class CommentList extends StatefulWidget {
 

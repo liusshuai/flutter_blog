@@ -1,12 +1,11 @@
-import 'package:app/page/system/about.dart';
-import 'package:app/page/system/follow.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/avatar.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/logo.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:flutter/material.dart';
-import 'package:package_info/package_info.dart';
+import 'package:webapp/page/system/about.dart';
+import 'package:webapp/page/system/follow.dart';
+import 'package:webapp/widget/avatar.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/logo.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
+import 'package:webapp/util/util.dart';
 
 class SystemPage extends StatefulWidget {
   @override
@@ -15,21 +14,9 @@ class SystemPage extends StatefulWidget {
 
 class _SystemPageState extends State<SystemPage> {
 
-  String version = '1.0.0';
-
-  Future<Null> getVersion() async {
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    setState(() {
-      version = packageInfo.version;
-    });
-
-    return null;
-  }
-
   @override
   void initState() { 
     super.initState();
-    getVersion();
   }
 
   @override
@@ -57,12 +44,7 @@ class _SystemPageState extends State<SystemPage> {
             router: FollowPage()
           ),
           SystemItem(
-            base: Text('版本信息'),
-            haveLine: false,
-            extra: 'v$version',
-            action: () async {
-              updateApp(context, true);
-            }
+            base: Text('通过flutter构建的web应用')
           )
         ]
       )

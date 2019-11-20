@@ -1,12 +1,12 @@
-import 'package:app/dao/article.dart';
-import 'package:app/module/article.dart';
-import 'package:app/widget/articleBox.dart';
-import 'package:app/widget/empty.dart';
-import 'package:app/widget/load_more.dart';
-import 'package:app/widget/loading.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:app/widget/searchBar.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/dao/article.dart';
+import 'package:webapp/module/article.dart';
+import 'package:webapp/widget/articleBox.dart';
+import 'package:webapp/widget/empty.dart';
+import 'package:webapp/widget/load_more.dart';
+import 'package:webapp/widget/loading.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:webapp/widget/searchBar.dart';
+import 'package:flutter_web/material.dart';
 
 class SearchPage extends StatefulWidget {
   @override

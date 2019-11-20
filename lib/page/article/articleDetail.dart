@@ -1,9 +1,8 @@
-import 'package:app/page/article/articleComments.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webapp/page/article/articleComments.dart';
+import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
 
 class ArticleDetailPage extends StatefulWidget {
 
@@ -28,15 +27,9 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
   List<Widget> renderContent() {
     List<Widget> list = [];
 
-    list.add(WebView(
-      initialUrl: 'http://www.lsshuai.com/h5/article/${widget.id}',
-      javascriptMode: JavascriptMode.unrestricted,
-      onPageFinished: (String value) {
-        setState(() {
-          loading = false;
-        });
-      }
-    ));
+    list.add(Center(child: Text(
+      '${widget.title} 详情'
+    )));
 
     if (loading) {
       list.add(Center(

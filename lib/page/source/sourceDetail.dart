@@ -1,14 +1,13 @@
-import 'package:app/dao/comment.dart';
-import 'package:app/module/comment.dart';
-import 'package:app/page/comment.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/bottom_drawer.dart';
-import 'package:app/widget/commentList.dart';
-import 'package:app/widget/commonBackbar.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/dao/comment.dart';
+import 'package:webapp/module/comment.dart';
+import 'package:webapp/page/comment.dart';
+import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/bottom_drawer.dart';
+import 'package:webapp/widget/commentList.dart';
+import 'package:webapp/widget/commonBackbar.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
 
 class SourceDetailPage extends StatefulWidget {
 
@@ -66,15 +65,15 @@ class _SourceDetailPageState extends State<SourceDetailPage> {
   List<Widget> renderContent() {
     List<Widget> list = [];
 
-    list.add(WebView(
-      initialUrl: 'http://www.lsshuai.com/h5/movie/${widget.id}',
-      javascriptMode: JavascriptMode.unrestricted,
-      onPageFinished: (String value) {
-        setState(() {
-          loading = false;
-        });
-      }
-    ));
+    // list.add(WebView(
+    //   initialUrl: 'http://www.lsshuai.com/h5/movie/${widget.id}',
+    //   javascriptMode: JavascriptMode.unrestricted,
+    //   onPageFinished: (String value) {
+    //     setState(() {
+    //       loading = false;
+    //     });
+    //   }
+    // ));
 
     if (loading) {
       list.add(Center(

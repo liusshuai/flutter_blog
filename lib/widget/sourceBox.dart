@@ -1,7 +1,7 @@
-import 'package:app/module/source.dart';
-import 'package:app/page/source/sourceDetail.dart';
-import 'package:app/util/util.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/module/source.dart';
+import 'package:flutter_web/material.dart';
+import 'package:webapp/page/source/sourceDetail.dart';
+import 'package:webapp/util/util.dart';
 
 class SourceBox extends StatelessWidget { 
 

@@ -1,15 +1,15 @@
-import 'package:app/dao/bibi.dart';
-import 'package:app/dao/comment.dart';
-import 'package:app/module/bibi.dart';
-import 'package:app/module/comment.dart';
-import 'package:app/page/comment.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/bibiBox.dart';
-import 'package:app/widget/empty.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/inlineLoading.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/dao/bibi.dart';
+import 'package:webapp/dao/comment.dart';
+import 'package:webapp/module/bibi.dart';
+import 'package:webapp/module/comment.dart';
+import 'package:webapp/page/comment.dart';
+import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/bibiBox.dart';
+import 'package:webapp/widget/empty.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/inlineLoading.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
 
 class BibiDetailPage extends StatefulWidget {
 

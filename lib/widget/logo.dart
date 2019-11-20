@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 
 class Logo extends StatelessWidget {
 
@@ -10,6 +10,6 @@ class Logo extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/images/logo_light.png', width: size);
+    return Image.asset('images/logo_light.png', width: size);
   }
 } 

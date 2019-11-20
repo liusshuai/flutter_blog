@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 
 class PageWrap extends StatelessWidget {
 
@@ -27,7 +27,7 @@ class PageWrap extends StatelessWidget {
       if (this.header != null) {
         list.add(Container(
           color: Color(headerColor),
-          padding: EdgeInsets.fromLTRB(14.0, padding.top, 14.0, 6.0),
+          padding: EdgeInsets.fromLTRB(14.0, 6.0, 14.0, 6.0),
           child: header
         ));
       }

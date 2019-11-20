@@ -1,13 +1,13 @@
-import 'package:app/dao/comment.dart';
-import 'package:app/module/comment.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/editBottom.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/infoNotice.dart';
-import 'package:app/widget/input.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:flutter/material.dart';
-import 'package:toast/toast.dart';
+import 'package:webapp/dao/comment.dart';
+import 'package:webapp/module/comment.dart';
+// import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/editBottom.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/infoNotice.dart';
+import 'package:webapp/widget/input.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
+// import 'package:toast/toast.dart';
 
 class CommentPage extends StatefulWidget {
   final int type;
@@ -38,12 +38,12 @@ class _CommentPageState extends State<CommentPage> {
   }
 
   void getUserInfo() {
-    getInfo().then((res) {
-      if (res != null) {
-        nameController.text = res['username'];
-        emailController.text = res['email'];
-      }
-    });
+    // getInfo().then((res) {
+    //   if (res != null) {
+    //     nameController.text = res['username'];
+    //     emailController.text = res['email'];
+    //   }
+    // });
   }
 
   @override
@@ -61,11 +61,11 @@ class _CommentPageState extends State<CommentPage> {
       String email = emailController.text;
 
       if (content == '') {
-        Toast.show('请输入内容好吗？', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
+        // Toast.show('请输入内容好吗？', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
       } else if (username == '') {
-        Toast.show('请输入你的名字好吗？', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
+        // Toast.show('请输入你的名字好吗？', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
       } else if (email == '') {
-        Toast.show('请输入你的邮箱好吗？', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
+        // Toast.show('请输入你的邮箱好吗？', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
       } else{
         dynamic params = {};
         if (widget.comment != null) {
@@ -88,18 +88,18 @@ class _CommentPageState extends State<CommentPage> {
             'type': widget.type
           };
         }
-        if (isSave) {
-          saveInfo(username, email);
-        } else {
-          removeInfo();
-        }
+        // if (isSave) {
+        //   saveInfo(username, email);
+        // } else {
+        //   removeInfo();
+        // }
         CommentDao.addComment(params).then((res) {
           if (res.code == 200) {
             contentController.text = '';
-            Toast.show('评论成功', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
+            // Toast.show('评论成功', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
             Navigator.pop(context, true);
           } else {
-            Toast.show(res.msg, context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
+            // Toast.show(res.msg, context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
           }
         });
       }

@@ -1,4 +1,4 @@
-import 'package:app/module/channel.dart';
+import 'package:webapp/module/channel.dart';
 
 class ArticleModule {
   final int total;

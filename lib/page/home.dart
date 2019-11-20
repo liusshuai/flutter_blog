@@ -1,17 +1,17 @@
-import 'package:app/dao/article.dart';
-import 'package:app/dao/channel.dart';
-import 'package:app/module/article.dart';
-import 'package:app/module/channel.dart';
-import 'package:app/page/search.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/articleBox.dart';
-import 'package:app/widget/empty.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/load_more.dart';
-import 'package:app/widget/loading.dart';
-import 'package:app/widget/logo.dart';
-import 'package:flutter/material.dart';
-import 'package:app/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
+import 'package:webapp/dao/article.dart';
+import 'package:webapp/dao/channel.dart';
+import 'package:webapp/module/article.dart';
+import 'package:webapp/module/channel.dart';
+import 'package:webapp/page/search.dart';
+import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/articleBox.dart';
+import 'package:webapp/widget/empty.dart';
+import 'package:webapp/widget/load_more.dart';
+import 'package:webapp/widget/loading.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/logo.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -61,36 +61,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  getArticlesByChannel([bool reload = false]) {
-    ArticleDao.fetchByChannel(page, _curIndex).then((res) {
-      if (reload) {
-        setState(() {
-          list = res.list;
-          total = res.total;
-          loading = false;
-        });
-      } else {
-        setState(() {
-          list.addAll(res.list);
-          total = res.total;
-        });
-      }
-    });
-  }
-
-  getArticleByChannel([bool reload = false]) {
-    if (_curIndex > 0) {
-      getArticlesByChannel(reload);
-    } else {
-      getArticles(reload);
-    }
-  }
-
   @override
   void initState() { 
     super.initState();
     getChannels();
     getArticles(true);
+
     _scrollController.addListener((){
       if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
         if (total == list.length) return;
@@ -106,13 +82,6 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  Future<Null> handleRefresh() async {
-    page = 1;
-    getArticleByChannel(true);
-
-    return null;
-  }
-
   TextStyle _initTextStyle(Color color) {
     return TextStyle(
       fontSize: 15.0,
@@ -121,7 +90,7 @@ class _HomePageState extends State<HomePage> {
       decoration: TextDecoration.none
     );
   }
-  
+
   Widget _selectItem(String title, int index, int total, [bool showLine = true]) {
 
     List<Widget> _list = [];
@@ -242,6 +211,38 @@ class _HomePageState extends State<HomePage> {
         ])
       )
     );
+  }
+
+  getArticlesByChannel([bool reload = false]) {
+    ArticleDao.fetchByChannel(page, _curIndex).then((res) {
+      if (reload) {
+        setState(() {
+          list = res.list;
+          total = res.total;
+          loading = false;
+        });
+      } else {
+        setState(() {
+          list.addAll(res.list);
+          total = res.total;
+        });
+      }
+    });
+  }
+
+  getArticleByChannel([bool reload = false]) {
+    if (_curIndex > 0) {
+      getArticlesByChannel(reload);
+    } else {
+      getArticles(reload);
+    }
+  }
+
+  Future<Null> handleRefresh() async {
+    page = 1;
+    getArticleByChannel(true);
+
+    return null;
   }
 
   Widget _renderListItem(int index) {

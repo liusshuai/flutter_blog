@@ -1,5 +1,5 @@
-import 'package:app/widget/inlineLoading.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/widget/inlineLoading.dart';
+import 'package:flutter_web/material.dart';
 
 class LoadMore extends StatelessWidget {
   final bool hasMore;

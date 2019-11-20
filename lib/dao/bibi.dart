@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:app/constant.dart';
-import 'package:app/module/bibi.dart';
-import 'package:app/module/common.dart';
-import 'package:app/util/http.dart';
+import 'package:webapp/constant.dart';
+import 'package:webapp/module/bibi.dart';
+import 'package:webapp/module/common.dart';
+import 'package:webapp/util/http.dart';
 
 class BibiDao {
   static Future<BibiModule> fetchBibi(int page) async {

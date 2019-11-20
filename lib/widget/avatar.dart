@@ -1,5 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 
 class Avatar extends StatelessWidget {
 
@@ -16,23 +15,18 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return CachedNetworkImage(
-      imageUrl: url,
-      imageBuilder: (context, imageProvider) => Container(
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-          border: border ? Border.all(width: 2.0, color: Color(0xffFF7F24))
-            : Border.all(width: 0.0, color: Colors.transparent),
-          borderRadius: BorderRadius.circular(size / 2),
-          image: DecorationImage(
-            image: imageProvider,
-            fit: BoxFit.cover
-          ),
-        ),
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        border: border ? Border.all(width: 2.0, color: Color(0xffFF7F24))
+          : Border.all(width: 0.0, color: Colors.transparent),
+        borderRadius: BorderRadius.circular(size / 2),
+        image: DecorationImage(
+          image: NetworkImage(url),
+          fit: BoxFit.cover
+        )
       ),
-      placeholder: (context, url) => CircularProgressIndicator(),
-      errorWidget: (context, url, error) => Icon(Icons.error),
     );
   }
 }

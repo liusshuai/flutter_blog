@@ -1,7 +1,7 @@
-import 'package:app/widget/commonBackbar.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webapp/widget/commonBackbar.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
 
 class AboutPage extends StatefulWidget {
   @override
@@ -15,15 +15,15 @@ class _AboutPageState extends State<AboutPage> {
   List<Widget> renderContent() {
     List<Widget> list = [];
 
-    list.add(WebView(
-      initialUrl: 'http://www.lsshuai.com/h5/about',
-      javascriptMode: JavascriptMode.unrestricted,
-      onPageFinished: (String value) {
-        setState(() {
-          pageLoading = false;
-        });
-      }
-    ));
+    // list.add(WebView(
+    //   initialUrl: 'http://www.lsshuai.com/h5/about',
+    //   javascriptMode: JavascriptMode.unrestricted,
+    //   onPageFinished: (String value) {
+    //     setState(() {
+    //       pageLoading = false;
+    //     });
+    //   }
+    // ));
 
     if (pageLoading) {
       list.add(Center(

@@ -1,11 +1,11 @@
-import 'package:app/dao/system.dart';
-import 'package:app/widget/commonBackbar.dart';
-import 'package:app/widget/editBottom.dart';
-import 'package:app/widget/infoNotice.dart';
-import 'package:app/widget/input.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:flutter/material.dart';
-import 'package:toast/toast.dart';
+import 'package:webapp/dao/system.dart';
+import 'package:webapp/widget/commonBackbar.dart';
+import 'package:webapp/widget/editBottom.dart';
+import 'package:webapp/widget/infoNotice.dart';
+import 'package:webapp/widget/input.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
+// import 'package:toast/toast.dart';
 
 class FollowPage extends StatelessWidget {
 
@@ -53,11 +53,11 @@ class FollowPage extends StatelessWidget {
 
               SystemDao.follow(username, email).then((res) {
                 if (res.code == 200) {
-                  Toast.show('关注成功', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
+                  // Toast.show('关注成功', context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
                   clearInfo();
                   Navigator.pop(context);
                 } else {
-                  Toast.show(res.msg, context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
+                  // Toast.show(res.msg, context, duration: Toast.LENGTH_LONG, gravity: Toast.TOP);
                 }
               });
             },

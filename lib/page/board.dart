@@ -1,12 +1,12 @@
-import 'package:app/dao/comment.dart';
-import 'package:app/module/comment.dart';
-import 'package:app/page/comment.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/commentList.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/loading.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/dao/comment.dart';
+import 'package:webapp/module/comment.dart';
+import 'package:webapp/page/comment.dart';
+import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/commentList.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/loading.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:flutter_web/material.dart';
 
 class BoardPage extends StatefulWidget {
   @override

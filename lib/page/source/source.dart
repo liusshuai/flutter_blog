@@ -1,12 +1,11 @@
-import 'package:app/dao/source.dart';
-import 'package:app/module/source.dart';
-import 'package:app/widget/empty.dart';
-import 'package:app/widget/loading.dart';
-import 'package:app/widget/page_wrap.dart';
-import 'package:app/widget/searchBar.dart';
-import 'package:app/widget/sourceBox.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:webapp/dao/source.dart';
+import 'package:webapp/module/source.dart';
+import 'package:webapp/widget/empty.dart';
+import 'package:webapp/widget/loading.dart';
+import 'package:webapp/widget/page_wrap.dart';
+import 'package:webapp/widget/searchBar.dart';
+import 'package:webapp/widget/sourceBox.dart';
+import 'package:flutter_web/material.dart';
 
 class SourcePage extends StatefulWidget {
   @override
@@ -78,6 +77,16 @@ class _SourcePageState extends State<SourcePage> {
     return SourceBox(source: sources[index]);
   }
 
+  List<Widget> renderSourceList() {
+    List<Widget> _sources = [];
+
+    for (var i = 0; i < sources.length; i++) {
+      _sources.add(renderContent(i));
+    }
+
+    return _sources;
+  }
+
   Widget renderMain() {
     if (sources.length > 0) {
       return MediaQuery.removePadding(
@@ -85,17 +94,10 @@ class _SourcePageState extends State<SourcePage> {
         removeTop: true,
         child: RefreshIndicator(
           onRefresh: handleFresh,
-          child: StaggeredGridView.countBuilder(
-            controller: _scrollController,
-            crossAxisCount: 4,
-            itemCount: sources.length,
-            itemBuilder: (BuildContext context, int index) => Center(
-              child: renderContent(index)
-            ),
-            staggeredTileBuilder: (int index) =>
-                new StaggeredTile.fit(2),
-            mainAxisSpacing: 2.0,
-            crossAxisSpacing: 2.0,
+          child: GridView.count( 
+            crossAxisCount: 2,
+            childAspectRatio: 0.75,
+            children: renderSourceList()
           )
         )
       );

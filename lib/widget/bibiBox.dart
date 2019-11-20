@@ -1,10 +1,10 @@
-import 'package:app/module/bibi.dart';
-import 'package:app/page/bibi/bibiDetail.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/icon.dart';
-import 'package:app/widget/imageViewer.dart';
-import 'package:flutter/material.dart';
-import 'package:app/constant.dart';
+import 'package:webapp/module/bibi.dart';
+import 'package:webapp/page/bibiDetail.dart';
+import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:webapp/widget/imageViewer.dart';
+import 'package:flutter_web/material.dart';
+import 'package:webapp/constant.dart';
 import 'dart:convert';
 
 class BibiBox extends StatelessWidget {

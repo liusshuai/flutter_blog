@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:app/constant.dart';
-import 'package:app/module/channel.dart';
-import 'package:app/util/http.dart';
+import 'package:webapp/constant.dart';
+import 'package:webapp/module/channel.dart';
+import 'package:webapp/util/http.dart';
 
 class ChannelDao {
   static Future<List> fetchChannels() async {

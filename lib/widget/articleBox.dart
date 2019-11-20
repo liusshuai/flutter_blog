@@ -1,10 +1,10 @@
-import 'package:app/constant.dart';
-import 'package:app/module/article.dart';
-import 'package:app/page/article/articleDetail.dart';
-import 'package:app/util/util.dart';
-import 'package:app/widget/avatar.dart';
-import 'package:app/widget/icon.dart';
-import 'package:flutter/material.dart';
+import 'package:webapp/constant.dart';
+import 'package:webapp/module/article.dart';
+import 'package:webapp/page/article/articleDetail.dart';
+import 'package:webapp/util/util.dart';
+import 'package:webapp/widget/avatar.dart';
+import 'package:webapp/widget/icon.dart';
+import 'package:flutter_web/material.dart';
 import 'dart:convert';
 
 class ArticleBox extends StatelessWidget {
@@ -116,6 +116,7 @@ class ArticleBox extends StatelessWidget {
           title: article.title,
           comment: article.comments
         ));
+        print('click');
       },
       child: Container(
         margin: EdgeInsets.only(top: 10.0),
@@ -191,7 +192,7 @@ class TagItem extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(6.0, 0, 8.0, 0),
       decoration: BoxDecoration(
         color: Colors.transparent,
-        border: Border.all(width: 1.0, color: Color(0xff4c4c4e)),
+        border: Border.all(width: 2.0, color: Color(0xff4c4c4e)),
         borderRadius: BorderRadius.circular(10.0)
       ),
       child: Center(child: Row(children: <Widget>[
